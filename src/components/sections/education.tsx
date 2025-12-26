@@ -14,7 +14,7 @@ export function Education() {
                 <Reveal>
                     <div className="mb-16 text-center">
                         <h2 className="mb-4 text-4xl font-bold md:text-5xl">
-                            <span className="gradient-text">Education</span>
+                               Formal <span className="gradient-text">Education</span>
                         </h2>
                         <div className="mx-auto mt-3 h-1 w-24 rounded-full bg-gradient-to-r from-blue-500 to-purple-600"></div>
                     </div>

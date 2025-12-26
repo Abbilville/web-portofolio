@@ -1,11 +1,24 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { experiences } from "@/data/experience";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Reveal } from "@/components/ui/reveal";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 export function Experience() {
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+
+    const toggleExpand = (index: number) => {
+        setExpandedIndex(expandedIndex === index ? null : index);
+    };
+
     return (
         <section id="experience" className="py-24 bg-muted/30">
             <div className="container mx-auto max-w-6xl px-6 lg:px-12">
@@ -54,17 +67,69 @@ export function Experience() {
                                                             ))}
                                                         </div>
 
-                                                        {exp.certificateUrl && (
-                                                            <div className="lg:flex lg:justify-end">
+                                                        <div className="flex flex-row flex-wrap gap-3 lg:justify-end">
+                                                            {exp.certificateUrl && (
                                                                 <a
                                                                     href={exp.certificateUrl}
                                                                     target="_blank"
                                                                     rel="noopener noreferrer"
-                                                                    className="inline-flex items-center gap-2 text-sm font-medium text-primary-500"
+                                                                    className="inline-flex items-center gap-2 text-sm font-medium text-primary-500 hover:underline"
                                                                 >
                                                                     <ExternalLink className="h-4 w-4" />
-                                                                    View Certificate
+                                                                    {exp.certificateLabel || "View Certificate"}
                                                                 </a>
+                                                            )}
+
+                                                            {exp.images && exp.images.length > 0 && (
+                                                                <button
+                                                                    onClick={() => toggleExpand(index)}
+                                                                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors"
+                                                                >
+                                                                    {expandedIndex === index ? (
+                                                                        <>
+                                                                            <ChevronUp className="h-4 w-4" />
+                                                                            Hide Photos ({exp.images.length})
+                                                                        </>
+                                                                    ) : (
+                                                                        <>
+                                                                            <ChevronDown className="h-4 w-4" />
+                                                                            View Photos ({exp.images.length})
+                                                                        </>
+                                                                    )}
+                                                                </button>
+                                                            )}
+                                                        </div>
+
+                                                        {/* Expandable Image Gallery */}
+                                                        {exp.images && exp.images.length > 0 && (
+                                                            <div
+                                                                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                                                    expandedIndex === index ? "max-h-[400px] mt-4" : "max-h-0"
+                                                                }`}
+                                                            >
+                                                                <div className="rounded-xl overflow-hidden">
+                                                                    <Swiper
+                                                                        modules={[Navigation, Pagination]}
+                                                                        navigation
+                                                                        pagination={{ clickable: true }}
+                                                                        spaceBetween={10}
+                                                                        slidesPerView={1}
+                                                                        className="experience-gallery"
+                                                                    >
+                                                                        {exp.images.map((img, imgIndex) => (
+                                                                            <SwiperSlide key={imgIndex}>
+                                                                                <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                                                                                    <Image
+                                                                                        src={img}
+                                                                                        alt={`${exp.company} - Photo ${imgIndex + 1}`}
+                                                                                        fill
+                                                                                        className="object-contain"
+                                                                                    />
+                                                                                </div>
+                                                                            </SwiperSlide>
+                                                                        ))}
+                                                                    </Swiper>
+                                                                </div>
                                                             </div>
                                                         )}
                                                     </GlassCard>
@@ -108,16 +173,70 @@ export function Experience() {
                                                             ))}
                                                         </div>
 
-                                                        {exp.certificateUrl && (
-                                                            <a
-                                                                href={exp.certificateUrl}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="inline-flex items-center gap-2 text-sm font-medium text-primary-500"
+                                                        <div className="flex flex-row flex-wrap gap-3">
+                                                            {exp.certificateUrl && (
+                                                                <a
+                                                                    href={exp.certificateUrl}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="inline-flex items-center gap-2 text-sm font-medium text-primary-500 hover:underline"
+                                                                >
+                                                                    <ExternalLink className="h-4 w-4" />
+                                                                    {exp.certificateLabel || "View Certificate"}
+                                                                </a>
+                                                            )}
+
+                                                            {exp.images && exp.images.length > 0 && (
+                                                                <button
+                                                                    onClick={() => toggleExpand(index)}
+                                                                    className="inline-flex items-center gap-2 text-sm font-medium text-blue-500 hover:text-blue-600 transition-colors"
+                                                                >
+                                                                    {expandedIndex === index ? (
+                                                                        <>
+                                                                            <ChevronUp className="h-4 w-4" />
+                                                                            Hide Photos ({exp.images.length})
+                                                                        </>
+                                                                    ) : (
+                                                                        <>
+                                                                            <ChevronDown className="h-4 w-4" />
+                                                                            View Photos ({exp.images.length})
+                                                                        </>
+                                                                    )}
+                                                                </button>
+                                                            )}
+                                                        </div>
+
+                                                        {/* Expandable Image Gallery */}
+                                                        {exp.images && exp.images.length > 0 && (
+                                                            <div
+                                                                className={`overflow-hidden transition-all duration-500 ease-in-out ${
+                                                                    expandedIndex === index ? "max-h-[400px] mt-4" : "max-h-0"
+                                                                }`}
                                                             >
-                                                                <ExternalLink className="h-4 w-4" />
-                                                                View Certificate
-                                                            </a>
+                                                                <div className="rounded-xl overflow-hidden">
+                                                                    <Swiper
+                                                                        modules={[Navigation, Pagination]}
+                                                                        navigation
+                                                                        pagination={{ clickable: true }}
+                                                                        spaceBetween={10}
+                                                                        slidesPerView={1}
+                                                                        className="experience-gallery"
+                                                                    >
+                                                                        {exp.images.map((img, imgIndex) => (
+                                                                            <SwiperSlide key={imgIndex}>
+                                                                                <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                                                                                    <Image
+                                                                                        src={img}
+                                                                                        alt={`${exp.company} - Photo ${imgIndex + 1}`}
+                                                                                        fill
+                                                                                        className="object-contain"
+                                                                                    />
+                                                                                </div>
+                                                                            </SwiperSlide>
+                                                                        ))}
+                                                                    </Swiper>
+                                                                </div>
+                                                            </div>
                                                         )}
                                                     </GlassCard>
                                                 </div>

@@ -7,7 +7,7 @@ export const experiences: Experience[] = [
         location: "Jakarta, Indonesia",
         startDate: "Aug 2025",
         endDate: "Jan 2026",
-        current: false,
+        current: true,
         techStack: ["Node.js", "React", "JavaScript", "PostgreSQL", "AWS"],
         description: [
             "Developed a fullstack platform to automate purchase order (PO) processing from unstructured PDFs into structured transactions using OCR",
@@ -16,6 +16,7 @@ export const experiences: Experience[] = [
             "Integrated AI-based document extraction tools (e.g., AWS Textract, Tesseract) for smarter PO data conversion"
         ],
         certificateUrl: "https://drive.google.com/file/d/1XKJb1bYk1bXo0u6d8F3Z2xYz9G5Q9ZlH/view?usp=sharing",
+        certificateLabel: "View Certificate"
     },
     {
         company: "Videfly",
@@ -31,7 +32,8 @@ export const experiences: Experience[] = [
             "Implemented intercomponent communication and variable passing using Kafka",
             "Successfully created more than 100 JSON templates for automated video generation, significantly expanding the platform's advertising capabilities"
         ],
-        certificateUrl: "https://drive.google.com/file/d/1XKJb1bYk1bXo0u6d8F3Z2xYz9G5Q9ZlH/view?usp=sharing",
+        certificateUrl: "https://drive.google.com/file/d/1xaOjtHQW1JSkDjqYEh9AdCdoIL6Ci2Ik/view?usp=drive_link",
+        certificateLabel: "View Certificate"
     },
     {
         company: "Faculty of Computer Science, Universitas Indonesia",
@@ -45,7 +47,8 @@ export const experiences: Experience[] = [
             "Led hands-on lab sessions and weekly discussions, ensuring clarity and engagement in complex topics such as digital circuits, platform-based systems, and AI fundamentals",
             "Courses assisted: Digital Systems, Programming Fundamentals 2, Computer Organization, Platform-Based Programming, Algorithm Design & Analysis, Introduction to AI & Data Science, and Calculus II"
         ],
-        certificateUrl: "https://drive.google.com/file/d/1XKJb1bYk1bXo0u6d8F3Z2xYz9G5Q9ZlH/view?usp=sharing",
+        certificateUrl: "https://drive.google.com/file/d/1R7NKlHG1EMohBhQOX07PqPm9l1DXacTe/view?usp=drive_link",
+        certificateLabel: "View Certificate"
     },
 ];
 

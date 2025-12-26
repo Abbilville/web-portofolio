@@ -4,6 +4,9 @@ export interface Project {
     description: string;
     longDescription?: string;
     image: string;
+    images?: string[];
+    slidesUrl?: string;
+    mediaType?: "images" | "slides" | "video" | "default";
     tags: string[];
     features?: string[];
     liveUrl?: string;
@@ -31,6 +34,8 @@ export interface Experience {
     techStack?: string[];
     current?: boolean;
     certificateUrl?: string;
+    certificateLabel?: string;
+    images?: string[];
 }
 
 export interface Education {
