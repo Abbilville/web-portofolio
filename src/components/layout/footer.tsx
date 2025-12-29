@@ -1,12 +1,12 @@
-import { Github, Linkedin, Mail, BookOpen, Instagram } from "lucide-react";
-import { personalInfo, socialLinks, navItems } from "@/data/personal";
+import { SiGithub, SiLinkedin, SiInstagram, SiMedium, SiGmail } from "react-icons/si";
+import { personalInfo, socialLinks } from "@/data/personal";
 
-const iconMap: Record<string, typeof Github> = {
-    Github,
-    Linkedin,
-    Mail,
-    BookOpen,
-    Instagram,
+const iconMap: Record<string, typeof SiGithub> = {
+    Github: SiGithub,
+    Linkedin: SiLinkedin,
+    Mail: SiGmail,
+    Medium: SiMedium,
+    Instagram: SiInstagram,
 };
 
 export function Footer() {
@@ -15,28 +15,12 @@ export function Footer() {
     return (
         <footer className="border-t border-foreground/10 bg-card/50 backdrop-blur-sm">
             <div className="container mx-auto max-w-7xl px-6 lg:px-12 py-8 md:py-12">
-                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
                     {/* Brand */}
                     <div className="text-center sm:text-left">
-                        <h3 className="gradient-text mb-2 text-lg font-bold">Abbilhaidar</h3>
+                        <h3 className="gradient-text mb-2 text-lg font-bold">Abbilhaidar FZ</h3>
                         <p className="text-sm text-muted-foreground">{personalInfo.role}</p>
                         <p className="mt-1 text-sm text-muted-foreground">{personalInfo.location}</p>
-                    </div>
-
-                    {/* Quick Links */}
-                    <div className="text-center sm:text-left">
-                        <h4 className="mb-4 text-sm font-semibold">Quick Links</h4>
-                        <div className="flex flex-col gap-2">
-                            {navItems.map((item) => (
-                                <a
-                                    key={item.href}
-                                    href={item.href}
-                                    className="text-sm text-muted-foreground transition-colors hover:text-primary"
-                                >
-                                    {item.label}
-                                </a>
-                            ))}
-                        </div>
                     </div>
 
                     {/* Social */}

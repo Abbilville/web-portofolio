@@ -15,8 +15,12 @@ export const experiences: Experience[] = [
             "Developed and optimized backend services using Node.js and PostgreSQL to support real-time transaction and shipment workflows",
             "Integrated AI-based document extraction tools (e.g., AWS Textract, Tesseract) for smarter PO data conversion"
         ],
-        certificateUrl: "https://drive.google.com/file/d/1XKJb1bYk1bXo0u6d8F3Z2xYz9G5Q9ZlH/view?usp=sharing",
-        certificateLabel: "View Certificate"
+        images: [
+            "/images/experience/gcm/1.jpeg",
+            "/images/experience/gcm/2.jpeg",
+            "/images/experience/gcm/3.jpeg",
+            "/images/experience/gcm/4.jpeg"
+        ]
     },
     {
         company: "Videfly",
@@ -33,10 +37,15 @@ export const experiences: Experience[] = [
             "Successfully created more than 100 JSON templates for automated video generation, significantly expanding the platform's advertising capabilities"
         ],
         certificateUrl: "https://drive.google.com/file/d/1xaOjtHQW1JSkDjqYEh9AdCdoIL6Ci2Ik/view?usp=drive_link",
-        certificateLabel: "View Certificate"
+        certificateLabel: "View Certificate",
+        images: [
+            "/images/experience/videfly/1.mp4",
+            "/images/experience/videfly/2.jpeg",
+            "/images/experience/videfly/3.jpeg"
+        ]
     },
     {
-        company: "Faculty of Computer Science, Universitas Indonesia",
+        company: "Universitas Indonesia",
         position: "Teaching Assistant",
         location: "Depok, West Java",
         startDate: "Aug 2023",
@@ -48,7 +57,14 @@ export const experiences: Experience[] = [
             "Courses assisted: Digital Systems, Programming Fundamentals 2, Computer Organization, Platform-Based Programming, Algorithm Design & Analysis, Introduction to AI & Data Science, and Calculus II"
         ],
         certificateUrl: "https://drive.google.com/file/d/1R7NKlHG1EMohBhQOX07PqPm9l1DXacTe/view?usp=drive_link",
-        certificateLabel: "View Certificate"
+        certificateLabel: "View Certificate",
+        images: [
+            "/images/experience/asdos/1.jpeg",
+            "/images/experience/asdos/2.jpeg",
+            "/images/experience/asdos/3.jpeg",
+            "/images/experience/asdos/4.jpeg",
+            "/images/experience/asdos/5.jpeg"
+        ]
     },
 ];
 

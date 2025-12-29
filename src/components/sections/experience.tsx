@@ -116,18 +116,32 @@ export function Experience() {
                                                                         slidesPerView={1}
                                                                         className="experience-gallery"
                                                                     >
-                                                                        {exp.images.map((img, imgIndex) => (
-                                                                            <SwiperSlide key={imgIndex}>
-                                                                                <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
-                                                                                    <Image
-                                                                                        src={img}
-                                                                                        alt={`${exp.company} - Photo ${imgIndex + 1}`}
-                                                                                        fill
-                                                                                        className="object-contain"
-                                                                                    />
-                                                                                </div>
-                                                                            </SwiperSlide>
-                                                                        ))}
+                                                                        {exp.images.map((img, imgIndex) => {
+                                                                            const isVideo = img.match(/\.(mp4|webm|mov)$/i);
+                                                                            return (
+                                                                                <SwiperSlide key={imgIndex}>
+                                                                                    <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                                                                                        {isVideo ? (
+                                                                                            <video
+                                                                                                src={img}
+                                                                                                className="h-full w-full object-contain"
+                                                                                                autoPlay
+                                                                                                loop
+                                                                                                muted
+                                                                                                playsInline
+                                                                                            />
+                                                                                        ) : (
+                                                                                            <Image
+                                                                                                src={img}
+                                                                                                alt={`${exp.company} - Photo ${imgIndex + 1}`}
+                                                                                                fill
+                                                                                                className="object-contain"
+                                                                                            />
+                                                                                        )}
+                                                                                    </div>
+                                                                                </SwiperSlide>
+                                                                            );
+                                                                        })}
                                                                     </Swiper>
                                                                 </div>
                                                             </div>
@@ -222,18 +236,32 @@ export function Experience() {
                                                                         slidesPerView={1}
                                                                         className="experience-gallery"
                                                                     >
-                                                                        {exp.images.map((img, imgIndex) => (
-                                                                            <SwiperSlide key={imgIndex}>
-                                                                                <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
-                                                                                    <Image
-                                                                                        src={img}
-                                                                                        alt={`${exp.company} - Photo ${imgIndex + 1}`}
-                                                                                        fill
-                                                                                        className="object-contain"
-                                                                                    />
-                                                                                </div>
-                                                                            </SwiperSlide>
-                                                                        ))}
+                                                                        {exp.images.map((img, imgIndex) => {
+                                                                            const isVideo = img.match(/\.(mp4|webm|mov)$/i);
+                                                                            return (
+                                                                                <SwiperSlide key={imgIndex}>
+                                                                                    <div className="relative w-full h-80 bg-muted rounded-lg overflow-hidden flex items-center justify-center">
+                                                                                        {isVideo ? (
+                                                                                            <video
+                                                                                                src={img}
+                                                                                                className="h-full w-full object-contain"
+                                                                                                autoPlay
+                                                                                                loop
+                                                                                                muted
+                                                                                                playsInline
+                                                                                            />
+                                                                                        ) : (
+                                                                                            <Image
+                                                                                                src={img}
+                                                                                                alt={`${exp.company} - Photo ${imgIndex + 1}`}
+                                                                                                fill
+                                                                                                className="object-contain"
+                                                                                            />
+                                                                                        )}
+                                                                                    </div>
+                                                                                </SwiperSlide>
+                                                                            );
+                                                                        })}
                                                                     </Swiper>
                                                                 </div>
                                                             </div>

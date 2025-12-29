@@ -43,10 +43,10 @@ export function About() {
                 <Reveal delay={0.2}>
                     <GlassCard className="mx-auto max-w-4xl mb-12">
                         <p className="text-lg leading-relaxed text-foreground/90 text-center">
-                            A passionate Computer Science student who enjoys building useful software and learning new technologies.
-                            Experienced in backend development, machine learning, and search systems. Familiar with tools such as Python,
-                            Java, JavaScript, Spring Boot, React, and Django. Interested in solving real-world problems and working on
-                            meaningful projects in software engineering or data science.
+                            A Computer Science student who enjoys building useful software and learning new technologies.
+                            Has experience in backend development, machine learning, and search systems. Familiar with Python,
+                            Java, JavaScript, and frameworks such as Spring Boot, React, and Django. Interested in solving
+                            real-world problems through software engineering and data science projects.
                         </p>
                     </GlassCard>
                 </Reveal>

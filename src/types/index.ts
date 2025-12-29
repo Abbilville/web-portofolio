@@ -6,7 +6,7 @@ export interface Project {
     image: string;
     images?: string[];
     slidesUrl?: string;
-    mediaType?: "images" | "slides" | "video" | "default";
+    pdfUrl?: string;
     tags: string[];
     features?: string[];
     liveUrl?: string;

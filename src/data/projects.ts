@@ -18,7 +18,12 @@ export const projects: Project[] = [
         category: "fullstack",
         liveUrl: "https://rencanakanid-stg.netlify.app/",
         period: "Feb 2025 - Jun 2025",
-        teamSize: "Group of 6"
+        teamSize: "Group of 6",
+        slidesUrl: "https://www.canva.com/design/DAGoEhRvM4w/WrOz9num55xeZ0AEdMLxYw/view?embed",
+        images: [
+            "/images/project/ppl/1.jpeg",
+            "/images/project/ppl/2.jpeg",
+        ]
     },
     {
         slug: "esempeha-search-engine",
@@ -38,7 +43,10 @@ export const projects: Project[] = [
         category: "ml",
         githubUrl: "https://github.com/Abbilville/esempeha-se",
         period: "Apr 2025 - May 2025",
-        teamSize: "Group of 3"
+        teamSize: "Group of 3",
+        images: [
+            "/images/project/tbi/1.png",
+        ]
     },
     {
         slug: "cc-fraud-detection-rl",
@@ -57,7 +65,8 @@ export const projects: Project[] = [
         category: "ml",
         githubUrl: "https://github.com/Abbilville/cc-fraud-sl-rl",
         period: "Mar 2025 - May 2025",
-        teamSize: "Group of 2"
+        teamSize: "Group of 2",
+        slidesUrl: "https://www.canva.com/design/DAGnzJsjpPI/baKX3E25_bAiSVLlZT-wCw/view?embed"
     },
     {
         slug: "multilingual-nli",
@@ -76,7 +85,11 @@ export const projects: Project[] = [
         category: "ml",
         githubUrl: "https://drive.google.com/drive/u/0/folders/1PKr4KqpRAI75Jbym0w0RjgcQRjHtofES",
         period: "Mar 2025 - Jun 2025",
-        teamSize: "Group of 3"
+        teamSize: "Group of 3",
+        slidesUrl: "https://www.canva.com/design/DAGpr5tBgXU/YpiMRikj6n7TdknGrE14Sw/view?embed",
+        images: [
+            "/images/project/dl/1.jpeg",
+        ]
     },
     {
         slug: "knowledge-graph-recipes",
@@ -95,11 +108,15 @@ export const projects: Project[] = [
         category: "web",
         githubUrl: "https://drive.google.com/drive/u/0/folders/1dCGPUaGHjijG7Hj0zoOXXAc-kslvcKIp",
         period: "Oct 2024 - Dec 2024",
-        teamSize: "Group of 4"
+        teamSize: "Group of 4",
+        slidesUrl: "https://www.canva.com/design/DAGYccIbmos/AkBPPxSsasdBwReQ-YolLw/view?embed",
+        images: [
+            "/images/project/kg/1.jpeg",
+        ]
     },
     {
         slug: "sibansos-ux-design",
-        title: "SiBansos — UX Design Social Welfare App",
+        title: "SiBansos: UX Design Social Welfare App",
         description: "Platform to streamline social aid distribution in Indonesia using AI and OCR",
         longDescription:
             "Designed the user interface of SiBansos, a platform to streamline social aid distribution in Indonesia. Conducted comprehensive user research and followed User-Centered Design approach. Selected as one of 20 national finalists out of 615 teams at GEMASTIK XVII in UX Design category.",
@@ -115,7 +132,13 @@ export const projects: Project[] = [
         category: "design",
         liveUrl: "https://ristek.link/PrototypeSiBansos",
         period: "Jan 2024 - Sep 2024",
-        teamSize: "Group of 4"
+        teamSize: "Group of 3",
+        slidesUrl: "https://www.canva.com/design/DAGN1KVjuWw/6Ail76jxo9WDywzVo7hFsg/view?embed",
+        images: [
+            "/images/project/gemastik/1.jpeg",
+            "/images/project/gemastik/2.jpeg",
+            "/images/project/gemastik/3.jpeg"
+        ]
     },
 ];
 

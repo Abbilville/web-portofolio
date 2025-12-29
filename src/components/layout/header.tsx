@@ -53,9 +53,8 @@ export function Header() {
                         onClick={(e) => handleClick(e, "#home")}
                         className="flex items-center gap-2 transition-opacity hover:opacity-80"
                     >
-                        {/* Logo placeholder - user will add their logo */}
                         <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 text-lg font-bold text-white">
-                            AF
+                            AFZ
                         </div>
                     </Link>
 

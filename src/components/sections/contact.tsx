@@ -4,8 +4,8 @@ import { useState } from "react";
 import { personalInfo } from "@/data/personal";
 import { GlassCard } from "@/components/ui/glass-card";
 import { Reveal } from "@/components/ui/reveal";
-import { Mail, BookOpen, Send } from "lucide-react";
-import { SiLinkedin, SiInstagram, SiGithub, SiWhatsapp } from "react-icons/si";
+import { Send } from "lucide-react";
+import { SiLinkedin, SiInstagram, SiGithub, SiWhatsapp, SiGmail, SiMedium } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 
 export function Contact() {
@@ -45,7 +45,7 @@ export function Contact() {
                                 <div className="space-y-4">
                                     <a href={`mailto:${personalInfo.email}`} className="flex items-center gap-4 rounded-lg p-3 transition-colors hover:bg-primary-500/10">
                                         <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 transition-all hover:scale-110">
-                                            <Mail className="h-6 w-6" />
+                                            <SiGmail className="h-6 w-6" />
                                         </div>
                                         <div>
                                             <p className="text-sm text-muted-foreground">Email</p>
@@ -81,7 +81,7 @@ export function Contact() {
                                         </a>
                                         <a href="https://medium.com/@Abbilville" target="_blank" rel="noopener noreferrer"
                                            className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary-500/10 transition-all hover:scale-110">
-                                            <BookOpen className="h-5 w-5" />
+                                            <SiMedium className="h-5 w-5" />
                                         </a>
                                     </div>
                                 </div>
@@ -145,7 +145,7 @@ export function Contact() {
                                 <Button
                                     type="submit"
                                     size="md"
-                                    className="w-full rounded-xl text-base bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
+                                    className="w-full rounded-xl text-base bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98]"
                                 >
                                     <Send className="mr-2 h-5 w-5" />
                                     Send Message

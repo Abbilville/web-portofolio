@@ -2,7 +2,7 @@ import { PersonalInfo, SocialLink } from "@/types/index";
 
 export const personalInfo: PersonalInfo = {
     name: "Abbilhaidar Farras Zulfikar",
-    role: "Backend Software Engineer",
+    role: "Backend Developer & Machine Learning Enthusiast",
     tagline: "Building scalable systems and exploring machine learning",
     location: "Jakarta, Indonesia",
     email: "abbilville@gmail.com",
@@ -17,19 +17,19 @@ export const socialLinks: SocialLink[] = [
         icon: "Github"
     },
     {
-        name: "LinkedIn",
-        url: "https://linkedin.com/in/abbilville",
-        icon: "Linkedin"
-    },
-    {
         name: "Instagram",
         url: "https://instagram.com/abbilville",
         icon: "Instagram"
     },
     {
+        name: "LinkedIn",
+        url: "https://linkedin.com/in/abbilville",
+        icon: "Linkedin"
+    },
+    {
         name: "Medium",
         url: "https://medium.com/@Abbilville",
-        icon: "BookOpen"
+        icon: "Medium"
     },
     {
         name: "Email",
