@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
+import { AnimatedBackground } from "@/components/ui/animated-background";
 import { personalInfo } from "@/data/personal";
 
 const geistSans = Geist({
@@ -53,6 +54,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <html lang="en" suppressHydrationWarning>
             <body className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
                 <ThemeProvider attribute="class" defaultTheme="dark" enableSystem disableTransitionOnChange>
+                    <AnimatedBackground />
+
                     <div className="flex min-h-screen flex-col">
                         <Header />
                         <main className="flex-1">{children}</main>

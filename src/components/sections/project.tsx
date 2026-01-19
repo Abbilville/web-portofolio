@@ -105,14 +105,14 @@ export function Project() {
                                             }`}
                                         >
                                             {tabs.length > 1 && (
-                                                <div className="flex gap-2 mb-3 border-b border-foreground/10 pb-2">
+                                                <div className="flex mb-3 border-b border-foreground/10 pb-2">
                                                     {hasSlides && (
                                                         <button
                                                             onClick={() => setActiveTab(prev => ({ ...prev, [index]: 'slides' }))}
-                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 ${
                                                                 currentTab === 'slides'
-                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                                                                    : 'bg-muted hover:bg-muted/80'
+                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                                                                    : 'bg-muted hover:bg-white/10 hover:shadow-md'
                                                             }`}
                                                         >
                                                             Slides
@@ -121,10 +121,10 @@ export function Project() {
                                                     {hasImages && (
                                                         <button
                                                             onClick={() => setActiveTab(prev => ({ ...prev, [index]: 'images' }))}
-                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 ${
                                                                 currentTab === 'images'
-                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                                                                    : 'bg-muted hover:bg-muted/80'
+                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                                                                    : 'bg-muted hover:bg-white/10 hover:shadow-md'
                                                             }`}
                                                         >
                                                             Images
@@ -133,10 +133,10 @@ export function Project() {
                                                     {hasPdf && (
                                                         <button
                                                             onClick={() => setActiveTab(prev => ({ ...prev, [index]: 'pdf' }))}
-                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
+                                                            className={`px-3 py-1.5 text-xs font-medium rounded-lg transition-all duration-300 ${
                                                                 currentTab === 'pdf'
-                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white'
-                                                                    : 'bg-muted hover:bg-muted/80'
+                                                                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                                                                    : 'bg-muted hover:bg-white/10 hover:shadow-md'
                                                             }`}
                                                         >
                                                             PDF
@@ -148,43 +148,59 @@ export function Project() {
                                             <div className="relative aspect-video overflow-hidden rounded-xl bg-gradient-to-br from-blue-500/20 to-purple-600/20 mb-4">
                                                 {currentTab === 'slides' && project.slidesUrl ? (
                                                     <>
-                                                        <iframe
-                                                            src={project.slidesUrl}
-                                                            className="absolute inset-0 h-full w-full"
-                                                            allowFullScreen
-                                                            title={`${project.title} slides`}
-                                                        />
-                                                        <a
-                                                            href={
-                                                                project.slidesUrl.includes('canva.com')
-                                                                    ? project.slidesUrl.replace(/\/view\?embed.*/, '/view')
-                                                                    : project.slidesUrl.replace('/embed', '/view')
-                                                            }
-                                                            target="_blank"
-                                                            rel="noopener noreferrer"
-                                                            className="absolute top-2 right-2 z-10 flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-black/80"
-                                                        >
-                                                            <ExternalLink className="h-3 w-3" />
-                                                            {project.slidesUrl.includes('canva.com') ? 'Open Canva' : 'Open Slides'}
-                                                        </a>
+                                                        {isActive ? (
+                                                            <>
+                                                                <iframe
+                                                                    src={project.slidesUrl}
+                                                                    className="absolute inset-0 h-full w-full"
+                                                                    allowFullScreen
+                                                                    title={`${project.title} slides`}
+                                                                    loading="lazy"
+                                                                />
+                                                                <a
+                                                                    href={
+                                                                        project.slidesUrl.includes('canva.com')
+                                                                            ? project.slidesUrl.replace(/\/view\?embed.*/, '/view')
+                                                                            : project.slidesUrl.replace('/embed', '/view')
+                                                                    }
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="absolute top-2 right-2 z-10 flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-black/80"
+                                                                >
+                                                                    <ExternalLink className="h-3 w-3" />
+                                                                    {project.slidesUrl.includes('canva.com') ? 'Open Canva' : 'Open Slides'}
+                                                                </a>
+                                                            </>
+                                                        ) : (
+                                                            <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
+                                                            </div>
+                                                        )}
                                                     </>
                                                 ) : currentTab === 'pdf' && project.pdfUrl ? (
                                                     <>
-                                                        <iframe
-                                                            src={project.pdfUrl}
-                                                            className="absolute inset-0 h-full w-full"
-                                                            title={`${project.title} PDF`}
-                                                        />
-                                                        {project.pdfUrl.includes('drive.google.com') && (
-                                                            <a
-                                                                href={project.pdfUrl.replace('/preview', '/view')}
-                                                                target="_blank"
-                                                                rel="noopener noreferrer"
-                                                                className="absolute top-2 right-2 z-10 flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-black/80"
-                                                            >
-                                                                <ExternalLink className="h-3 w-3" />
-                                                                Open PDF
-                                                            </a>
+                                                        {isActive ? (
+                                                            <>
+                                                                <iframe
+                                                                    src={project.pdfUrl}
+                                                                    className="absolute inset-0 h-full w-full"
+                                                                    title={`${project.title} PDF`}
+                                                                    loading="lazy"
+                                                                />
+                                                                {project.pdfUrl.includes('drive.google.com') && (
+                                                                    <a
+                                                                        href={project.pdfUrl.replace('/preview', '/view')}
+                                                                        target="_blank"
+                                                                        rel="noopener noreferrer"
+                                                                        className="absolute top-2 right-2 z-10 flex items-center gap-1.5 rounded-lg bg-black/60 backdrop-blur-sm px-3 py-1.5 text-xs font-medium text-white transition-all hover:bg-black/80"
+                                                                    >
+                                                                        <ExternalLink className="h-3 w-3" />
+                                                                        Open PDF
+                                                                    </a>
+                                                                )}
+                                                            </>
+                                                        ) : (
+                                                            <div className="absolute inset-0 flex items-center justify-center bg-muted/50">
+                                                            </div>
                                                         )}
                                                     </>
                                                 ) : currentTab === 'images' && project.images && project.images.length > 0 ? (
@@ -217,6 +233,7 @@ export function Project() {
                                                                                     alt={`${project.title} - ${imgIndex + 1}`}
                                                                                     fill
                                                                                     className="object-cover"
+                                                                                    loading="lazy"
                                                                                 />
                                                                             )}
                                                                         </div>
@@ -241,6 +258,7 @@ export function Project() {
                                                                     alt={project.title}
                                                                     fill
                                                                     className="object-cover"
+                                                                    loading="lazy"
                                                                 />
                                                             )}
                                                         </div>
@@ -254,7 +272,6 @@ export function Project() {
                                                 )}
                                             </div>
 
-                                            {/* Project Info - More compact */}
                                             <div className="flex flex-col">
                                                 <div className="mb-3">
                                                     <h3 className="mb-1 text-xl font-bold">{project.title}</h3>
@@ -263,7 +280,6 @@ export function Project() {
                                                     </p>
                                                 </div>
 
-                                                {/* Team Size */}
                                                 {(project.teamSize === "Solo" || project.teamSize) && (
                                                     <div className="mb-3 flex items-center gap-2 text-xs text-muted-foreground">
                                                         {project.teamSize === "Solo" ? (
@@ -280,7 +296,6 @@ export function Project() {
                                                     </div>
                                                 )}
 
-                                                {/* Tech Stack */}
                                                 <div className="mb-3">
                                                     <h4 className="mb-1.5 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
                                                         Tech Stack
@@ -294,7 +309,6 @@ export function Project() {
                                                     </div>
                                                 </div>
 
-                                                {/* Links */}
                                                 <div className="flex gap-2">
                                                     {project.githubUrl && (
                                                         <a
