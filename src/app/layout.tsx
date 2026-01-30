@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: `${personalInfo.name} | ${personalInfo.role}`,
+    title: `Abbilville's Portfolio`,
     description: personalInfo.summary,
     authors: [{ name: personalInfo.name }],
     creator: personalInfo.name,
@@ -38,15 +38,15 @@ export const metadata: Metadata = {
     openGraph: {
         type: "website",
         locale: "en_US",
-        title: `${personalInfo.name} | ${personalInfo.role}`,
+        title: `Abbilville's Portfolio`,
         description: personalInfo.tagline,
         siteName: personalInfo.name,
     },
     twitter: {
         card: "summary_large_image",
-        title: `${personalInfo.name} | ${personalInfo.role}`,
+        title: `Abbilville's Portfolio`,
         description: personalInfo.tagline,
-    },
+    }
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

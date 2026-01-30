@@ -3,7 +3,7 @@ import { PersonalInfo, SocialLink } from "@/types/index";
 export const personalInfo: PersonalInfo = {
     name: "Abbilhaidar Farras Zulfikar",
     role: "Backend Developer & Machine Learning Enthusiast",
-    tagline: "Building scalable systems and exploring machine learning",
+    tagline: "Breaking boundaries with code and crafting solutions that matter.",
     location: "Jakarta, Indonesia",
     email: "abbilville@gmail.com",
     phone: "(+62) 82110884760",
